@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ottaa_project/screens/widgets/setting_section.dart';
 import 'package:ottaa_project/utils/build_app_bar.dart';
-import 'package:ottaa_project/utils/subtitle_items.dart';
-import 'package:ottaa_project/utils/text_to_speech_items.dart';
 
 class VoiceAndSubtitlesScreen extends StatelessWidget {
   const VoiceAndSubtitlesScreen({Key? key}) : super(key: key);
@@ -11,13 +8,76 @@ class VoiceAndSubtitlesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar('Voice and subtitles'),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SettingSection(items: text_to_speech_items),
-            SettingSection(items: subtitle_items),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 30,
+          vertical: 10,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'TEXT-TO-SPEECH-ENGINE',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              Divider(
+                height: 10,
+                color: Colors.grey[700],
+              ),
+              SwitchListTile(
+                value: false,
+                onChanged: (value) {},
+                title: Text('Enable custom TTS'),
+                subtitle: Text('OFF'),
+              ),
+              Divider(),
+              ListTile(
+                onTap: () {},
+                title: Text('Speech rate'),
+                subtitle: Text('10'),
+                enabled: false,
+              ),
+              Divider(),
+              ListTile(
+                onTap: () {},
+                title: Text('Voice pitch'),
+                subtitle: Text('10'),
+                enabled: false,
+              ),
+              Text(
+                'SUBTITLE',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              Divider(
+                height: 10,
+                color: Colors.grey[700],
+              ),
+              SwitchListTile(
+                title: Text('Customized subtitle'),
+                subtitle: Text('ON'),
+                onChanged: (bool value) {},
+                value: true,
+              ),
+              Divider(),
+              ListTile(
+                title: Text('Size'),
+              ),
+              Divider(),
+              SwitchListTile(
+                title: Text('Uppercase'),
+                subtitle: Text('It allows uppercase subtitles.'),
+                onChanged: (bool value) {},
+                value: true,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ottaa_project/screens/settings_screen.dart';
+import 'package:ottaa_project/screens/form_screen.dart';
 
 class OttaaProjectApp extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class OttaaProjectApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         primaryColor: Colors.orange,
       ),
-      home: SettingsScreen(),
+      home: FormScreen(),
     );
   }
 }
